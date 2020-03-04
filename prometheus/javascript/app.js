@@ -4,26 +4,26 @@ const server = express();
 const register = new client.Registry();
 
 // Probe every 5th second.
-const intervalCollector = client.collectDefaultMetrics({prefix: 'node_', timeout: 5000, register});
+const intervalCollector = client.collectDefaultMetrics({prefix: 'javascript_', timeout: 5000, register});
 
 const counter = new client.Counter({
-    name: "node_my_counter",
+    name: "javascript_my_counter",
     help: "This is my counter"
 });
 
 const gauge = new client.Gauge({
-    name: "node_my_gauge",
+    name: "javascript_my_gauge",
     help: "This is my gauge"
 });
 
 const histogram = new client.Histogram({
-    name: "node_my_histogram",
+    name: "javascript_my_histogram",
     help: "This is my histogram",
     buckets: [0.1, 5, 15, 50, 100, 500]
 });
 
 const summary = new client.Summary({
-    name: "node_my_summary",
+    name: "javascript_my_summary",
     help: "This is my summary",
     percentiles: [0.01, 0.05, 0.5, 0.9, 0.95, 0.99, 0.999]
 });
