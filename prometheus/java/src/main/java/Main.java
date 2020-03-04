@@ -31,7 +31,7 @@ public class Main {
 
 
         try {
-            HttpServer server = HttpServer.create(new InetSocketAddress("0.0.0.0", 80), 1000);
+            HttpServer server = HttpServer.create(new InetSocketAddress("0.0.0.0", 8000), 1000);
 
 
             server.createContext("/", httpExchange -> {
